@@ -1,11 +1,11 @@
 import React from 'react';
 import './Button.css';
 ;
-function Button({type}){
+function Button({buttonText, classname, type}){
     return(
         <div className="btn-wrapper">
-            <button className="btn">
-                {type}
+            <button className={classname} type={type}>
+                {buttonText}
             </button>
         </div>
     );
