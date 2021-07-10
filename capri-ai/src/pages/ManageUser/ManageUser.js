@@ -4,7 +4,7 @@ import axios from 'axios';
 import './ManageUser.css';
 import data from '../../components/SampleData';
 
-import Button from '../../components/button/Button';
+import CustomButton from '../../components/button/Button';
 import LinkedAccountItem from '../../components/LinkedAccountItem/LinkedAccountItem';
 
 function ManageUser(){
@@ -20,11 +20,11 @@ function ManageUser(){
         let requestUrl = `https://systems.capriai.us/listAllAccounts?agentID=${agentid}`
         try{
             listarea.innerText = "Loading..."
-            let response  = await axios.get(requestUrl);
-            console.log(response);
+            const response  = await axios.get(requestUrl);
+            console.log(response.data);
         }
-        catch{
-            console.log("error");
+        catch (err){
+            console.error(err);
             setLinkedAccounts(data);
             if(LinkedAccounts.length === 0){
                 listarea.innerText = "No Matching Results"
@@ -36,16 +36,17 @@ function ManageUser(){
         <div className="manage-user-wrapper">
             <div className="manage-user-left-wrapper">
                 <div className="form-wrapper">
+                    <h2 id="manageUser-form-header">Search with AgentID</h2>
                     <form className="agentid-form" onSubmit={(e) => SubmitHandler(e)}>
                         <div className="form-group">
                             <input type="text" placeholder="Agent-ID"
-                            className="form-control" 
+                            className="form-control agentid-formfield" 
                             value={agentid} 
                             onChange={(e) => setAgentid(e.target.value)}
                             required/>
                         </div>
                         <div className="form-group">
-                            <Button type={"submit"} classname={"form-control agentid-btn"}
+                            <CustomButton type={"submit"} classname={"form-control agentid-btn"}
                             buttonText={"Search"}/>
                         </div>
                     </form>

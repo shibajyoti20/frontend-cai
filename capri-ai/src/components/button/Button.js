@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.css';
 
-function Button({buttonText, classname, type}){
+function CustomButton({buttonText, classname, type}){
     return(
         <div className="btn-wrapper">
             <button className={classname} type={type}>
@@ -11,4 +11,4 @@ function Button({buttonText, classname, type}){
     );
 }
 
-export default Button;
+export default CustomButton;

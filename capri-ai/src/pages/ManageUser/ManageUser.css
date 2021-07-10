@@ -9,7 +9,6 @@
 }
 .manage-user-left-wrapper{
     width: 40%;
-    border-right: 1px solid grey;
 }
 .manage-user-right-wrapper{
     width: 50%;
@@ -17,12 +16,25 @@
 .form-wrapper{
     width: 100%;
 }
+#manageUser-form-header{
+    font-weight: 800;
+    margin-bottom: 40px;
+}
 .agentid-form{
     width: 80%;
+    padding-bottom: 30px;
     margin: auto;
 }
 .form-control{
+    font-size: 18px;
     border: 2px solid #c0bdbd;
+}
+.agentid-formfield{
+    padding: 20px 10px;
+}
+.agentid-btn{
+    font-size: 20px;
+    height: 40px;
 }
 .form-control::placeholder{
     color: #575757;

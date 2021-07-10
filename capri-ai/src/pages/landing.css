@@ -1,4 +1,4 @@
-.btn-wrapper{
+.landing-btn-wrapper{
     height: 100vh;
     width: 95%;
     margin: auto;
@@ -8,14 +8,14 @@
 }
 
 .btn-inside{
-    width: 75%;
+    width: 60%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
     align-items: center;
 }
 
 .user-btn{
-    padding: 20px 30px;
+    padding: 10px 25px;
     font-size: 20px;
 }
