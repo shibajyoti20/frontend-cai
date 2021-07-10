@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import Landing from './pages/Landing';
-import ManageUser from './pages/ManageUser';
+import ManageUser from './pages/ManageUser/ManageUser';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
 		<div className="App">
 			<Switch>
 				<Route path="/" exact component={Landing} />
-				<Route path="/" exact component={ManageUser} />
+				<Route path="/manage" component={ManageUser} />
 			</Switch>
 		</div>
     </Router>

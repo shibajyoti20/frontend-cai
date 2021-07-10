@@ -1,0 +1,39 @@
+.manage-user-wrapper{
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.manage-user-left-wrapper{
+    width: 40%;
+    border-right: 1px solid grey;
+}
+.manage-user-right-wrapper{
+    width: 40%;
+}
+.form-wrapper{
+    width: 100%;
+}
+.agentid-form{
+    width: 60%;
+    margin: auto;
+}
+.form-control{
+    border: 2px solid #c0bdbd;
+    padding-left: 20px;
+}
+.form-control::placeholder{
+    color: #575757;
+}
+.connected-account-list-wrapper{
+    width: 80%;
+    height: 400px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: -4px 3px 23px -5px #6d6d6d;
+    -webkit-box-shadow: -4px 3px 23px -5px #6d6d6d;
+    -moz-box-shadow: -4px 3px 23px -5px #6d6d6d;
+}
