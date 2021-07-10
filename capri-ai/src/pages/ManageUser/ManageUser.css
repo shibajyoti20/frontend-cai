@@ -12,13 +12,13 @@
     border-right: 1px solid grey;
 }
 .manage-user-right-wrapper{
-    width: 40%;
+    width: 50%;
 }
 .form-wrapper{
     width: 100%;
 }
 .agentid-form{
-    width: 60%;
+    width: 80%;
     margin: auto;
 }
 .form-control{
@@ -28,11 +28,42 @@
     color: #575757;
 }
 .connected-account-list-wrapper{
-    width: 80%;
-    height: 400px;
+    width: 100%;
+    height: 60vh;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    color: #424242;
     background-color: #f7f7f7;
     border-radius: 8px;
     box-shadow: -4px 3px 23px -5px #6d6d6d;
     -webkit-box-shadow: -4px 3px 23px -5px #6d6d6d;
     -moz-box-shadow: -4px 3px 23px -5px #6d6d6d;
+}
+.status-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px){
+    .manage-user-wrapper{
+        width: 95%;
+        margin: auto;
+    }
+    .agentid-form{
+        width: 80%;
+        margin: auto;
+    }
+    .manage-user-right-wrapper{
+        width: 50%;
+    }
+    .connected-account-list-wrapper{
+        width: 100%;
+        height: 400px;
+    } 
 }
