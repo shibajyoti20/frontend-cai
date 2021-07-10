@@ -1,8 +1,7 @@
 import React from 'react';
-import manageUser from '../section/OlderMember/manageUser';
-import addMember from '../section/NewMember/addMember';
+import Button from '../components/button/Button';
 
-function landing()
+function Landing()
 {
     return(
         <React.Fragment>
@@ -11,4 +10,4 @@ function landing()
     )
 }
 
-export default landing;
+export default Landing;
