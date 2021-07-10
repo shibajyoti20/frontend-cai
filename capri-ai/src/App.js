@@ -1,6 +1,6 @@
 import './App.css';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
-import Landing from './pages/Landing';
+import Landing from './pages/landing';
 import ManageUser from './pages/ManageUser/ManageUser';
 
 function App() {

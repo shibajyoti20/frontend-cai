@@ -23,7 +23,6 @@
 }
 .form-control{
     border: 2px solid #c0bdbd;
-    padding-left: 20px;
 }
 .form-control::placeholder{
     color: #575757;

@@ -17,6 +17,10 @@ function ManageUser(){
                             onChange={(e) => setAgentid(e.target.value)}
                             required/>
                         </div>
+                        <div className="form-group">
+                            <Button type={"submit"} clsname={"form-control agentid-btn"}
+                            btnText={"Search"}/>
+                        </div>
                     </form>
                 </div>
             </div>
