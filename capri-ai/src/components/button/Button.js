@@ -1,8 +1,13 @@
 import React from 'react';
-
-function Button(){
+import './Button.css';
+;
+function Button({type}){
     return(
-        <div className="button-wrapper"></div>
+        <div className="btn-wrapper">
+            <button className="btn">
+                {type}
+            </button>
+        </div>
     );
 }
 
