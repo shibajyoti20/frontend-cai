@@ -1,58 +1,177 @@
 .manage-user-wrapper{
-    width: 80%;
-    margin: auto;
+    width: 100%;
     height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    margin: auto;
+    overflow-y: hidden;
 }
 .manage-user-left-wrapper{
-    width: 40%;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #c0bdbd;
 }
 .manage-user-right-wrapper{
-    width: 50%;
-}
-.form-wrapper{
     width: 100%;
 }
-#manageUser-form-header{
-    font-weight: 800;
-    margin-bottom: 40px;
+.form-wrapper{
+    width: 95%;
+    margin: auto;
+}
+.agentid-form-header{
+    margin-bottom: 20px;
+    font-family: var(--font-primary);
 }
 .agentid-form{
-    width: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 30px;
-    margin: auto;
+    margin: 0px auto;
+}
+.agentid-form-group{
+    width: 60%;
 }
 .form-control{
     font-size: 18px;
-    border: 2px solid #c0bdbd;
+    border: 1px solid #c0bdbd;
+    border-top-left-radius: 50rem;
+    border-bottom-left-radius: 50rem;
 }
-.agentid-formfield{
-    padding: 20px 10px;
-}
-.agentid-btn{
-    font-size: 20px;
-    height: 40px;
+.form-control:focus{
+    border: 1px solid #c0bdbd;
 }
 .form-control::placeholder{
-    color: #575757;
+    color: #646368;
+}
+.agentid-formfield{
+    padding: 25px 48px;
+}
+.agentid-glyph{
+    position: relative;
+    left: 40px;
+    top: calc(-25px/4);
+    font-size: 18px;
+    color: #5f6368;
+}
+.agentid-btn{
+    font-size: 18px;
+    letter-spacing: .25px;
+    height: 52px;
+    padding: 0px 30px;
+    border-radius: 0rem 50rem 50rem 0rem;
+}
+/* .filter-header-wrapper{
+    width: 65%;
+    margin: auto;
+    text-align: left;
+} */
+.search-filters-form{
+    width: 70%;
+    margin: auto;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.react-datepicker {
+    font-size: 1.1em;
+}
+.react-datepicker__header {
+    padding-top: 0.9em;
+}
+.react-datepicker__month {
+    margin: 0.5em 1.1em;
+}
+.react-datepicker__day-name, .react-datepicker__day {
+    width: 2em;
+    line-height: 2em;
+    margin: 0.266em;
+}
+.react-datepicker__current-month {
+    font-size: 1.1em;
+}
+.react-datepicker__navigation {
+    top: 1.1em;
+    line-height: 1.8em;
+    border: 0.55em solid transparent;
+}
+.react-datepicker__navigation--previous {
+    border-right-color: #ccc;
+    left: 1.1em;
+}
+.react-datepicker__navigation--next {
+    border-left-color: #ccc;
+    right: 1.1em;
+}
+#divider-text{
+    margin: 0px 10px;
+}
+.search-filter{
+    width: 110px;
+    padding: 8px 10px;
+    border: 1px solid #c0bdbd;
+    border-radius: 50rem;
+    cursor: pointer;
+    caret-color: transparent
+}
+.search-filter:focus{
+    border: 1.2px solid #4B77BC;
+    background-color: #E8F1FD;
+}
+.search-filter:focus::-webkit-input-placeholder{
+    color: #1A73E8;
+}
+.search-filter:focus::-moz-placeholder{
+    color: #1A73E8;
+}
+:focus-visible{
+    outline: none;
+}
+.search-filter::placeholder{
+    text-align: center;
+    color: #424242;
+    font-family: var(--font-monospace);
+    font-size: 14px;
+    font-weight: 500;
+}
+.clear-btn{
+    background-color: #E8F1FD;
+    color: #1A73E8;
+    border: 1px solid #1A73E8;
+    border-radius: 50rem;
+    font-size: 11px;
+    font-weight: 600;
+    position: relative;
+    left: -22px;
+}
+.result-number-wrapper{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.result-section-sideheader{
+    border: 1px solid #c0bdbd;
+    border-radius: 50rem;
+    padding: 5px 10px;
+    font-family: var(--font-primary);
 }
 .connected-account-list-wrapper{
     width: 100%;
-    height: 60vh;
+    height: 75vh;
     padding-top: 30px;
     padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
     color: #424242;
-    background-color: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: -4px 3px 23px -5px #6d6d6d;
-    -webkit-box-shadow: -4px 3px 23px -5px #6d6d6d;
-    -moz-box-shadow: -4px 3px 23px -5px #6d6d6d;
 }
 .status-text{
     width: 100%;
@@ -61,21 +180,14 @@
     justify-content: center;
     align-items: center;
 }
-
-@media screen and (max-width: 768px){
-    .manage-user-wrapper{
-        width: 95%;
-        margin: auto;
-    }
-    .agentid-form{
-        width: 80%;
-        margin: auto;
-    }
-    .manage-user-right-wrapper{
-        width: 50%;
-    }
-    .connected-account-list-wrapper{
+@media screen and (max-width: 440px){
+    .agentid-form-group{
         width: 100%;
-        height: 400px;
-    } 
+    }
+    .agentid-btn{
+        display: none;
+    }
+    .form-control{
+        border-radius: 50rem;
+    }
 }
