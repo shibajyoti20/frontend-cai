@@ -21,7 +21,7 @@ function Landing()
                     {/* Add User */}
                     <div className="btn-wrapper">
                         <button className="user-btn" 
-                        onClick={() => window.location.replace("https://marketplace.gohighlevel.com/oauth/chooselocation?response_type=code&redirect_uri=h[…]rsations/message.readonly%20conversations/message.write")}>
+                        onClick={() => window.location.href ="https://marketplace.gohighlevel.com/oauth/chooselocation?response_type=code&redirect_uri=h[…]rsations/message.readonly%20conversations/message.write"}>
                             Add User
                         </button>
                     </div>
