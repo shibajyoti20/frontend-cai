@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from '../components/button/Button';
 import './landing.css';
 
@@ -21,7 +21,7 @@ function Landing()
                     {/* Add User */}
                     <div className="btn-wrapper">
                         <button className="user-btn" 
-                        onClick={() => window.open("https://marketplace.gohighlevel.com/oauth/chooselocation?response_type=code&redirect_uri=h[…]rsations/message.readonly%20conversations/message.write")}>
+                        onClick={() => window.location.replace("https://marketplace.gohighlevel.com/oauth/chooselocation?response_type=code&redirect_uri=h[…]rsations/message.readonly%20conversations/message.write")}>
                             Add User
                         </button>
                     </div>
