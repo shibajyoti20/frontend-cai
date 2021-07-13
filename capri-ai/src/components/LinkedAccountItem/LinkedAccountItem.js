@@ -27,6 +27,14 @@ function LinkedAccountItem({accountData}){
             <LinkedAccountField FieldLabel={"Servac Email: "} 
             FieldContent={accountData.servacEmail}/>
 
+            {/* BusinessName */}
+            {
+                accountData.businessName !== undefined &&
+                <LinkedAccountField FieldLabel={"Business Name: "} 
+                FieldContent={accountData.businessName}/>
+            }
+
+
         </div>
     );
 }

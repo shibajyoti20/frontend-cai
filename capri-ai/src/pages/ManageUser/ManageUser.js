@@ -32,6 +32,12 @@ function ManageUser(){
         return date;
     }
 
+    function onDatepickerRef(el) { 
+        if (el && el.input) { 
+            el.input.readOnly = true; 
+        } 
+    }
+
     const SubmitHandler = async(e) => {
         e.preventDefault();
 
@@ -80,66 +86,71 @@ function ManageUser(){
         <div className="manage-user-wrapper">
             <div className="manage-user-left-wrapper">
                 <div className="form-wrapper">
-                    <h2 id="agentid-form-header">Search By Agent ID</h2>
+                    <h2 id="agentid-form-header">DialogFlow Agent</h2>
                     <form className="agentid-form" onSubmit={(e) => SubmitHandler(e)}>
                         <span className="glyphicon glyphicon-search agentid-glyph"></span>
                         <div className="form-group agentid-form-group">
-                            <input type="text" placeholder="Agent-ID"
+                            <input type="text" placeholder="Enter Your DialogFlow Agent ID Here"
                             className="form-control agentid-formfield" 
                             value={agentid} 
                             onChange={(e) => setAgentid(e.target.value)}
                             required/>
                         </div>
                         <div className="form-group">
-                            <CustomButton type={"submit"} classname={"form-control agentid-btn"}
-                            buttonText={"Search"}/>
+                            <CustomButton type={"submit"} 
+                            classname={"form-control agentid-btn"}
+                            buttonText={"List Connected Accounts"}/>
                         </div>
                     </form>
 
                     {/* Date Filters */}
-                    {/* <div className="filter-header-wrapper">
-                        <h4><b>Filters</b></h4>
-                    </div> */}
+                    <div className="filter-wrapper">
+                        <div className="filter-header-wrapper">
+                            <div className="filter-header"><b>Filters</b></div>
+                        </div>
 
-                    <div className="search-filters-form">
-                        <div className="form-group">
-                            <DatePicker className="search-filter"
-                            selected={StartDate} 
-                            onChange={(date) => setStartDate(date)}
-                            dateFormat = "yyyy-MM-dd"
-                            maxDate={new Date()}
-                            placeholderText="Start Date" />
-                        </div>
-                        {
-                            StartDate !== '' &&
+                        <div className="search-filters-form">
                             <div className="form-group">
-                                <button onClick={() => setStartDate('')}
-                                className="clear-btn">
-                                    X
-                                </button>
+                                <DatePicker className="search-filter"
+                                selected={StartDate} 
+                                ref={el => onDatepickerRef(el)}
+                                onChange={(date) => setStartDate(date)}
+                                dateFormat = "yyyy-MM-dd"
+                                maxDate={new Date()}
+                                placeholderText="Start Date" />
                             </div>
-                        }
-                        <div className="form-group">
-                            <h4 id="divider-text">to</h4>
-                        </div>
-                        <div className="form-group">
-                            <DatePicker className="search-filter"
-                            selected={EndDate} 
-                            onChange={(date) => setEndDate(date)}
-                            dateFormat = "yyyy-MM-dd"
-                            maxDate={new Date()}
-                            placeholderText="End Date" />
-                        </div>
-                        {
-                            EndDate !== '' &&
+                            {
+                                StartDate !== '' &&
+                                <div className="form-group">
+                                    <button onClick={() => setStartDate('')}
+                                    className="clear-btn">
+                                        X
+                                    </button>
+                                </div>
+                            }
                             <div className="form-group">
-                                <button 
-                                onClick={() => setEndDate('')}
-                                className="clear-btn">
-                                    X
-                                </button>
+                                <h4 id="divider-text">to</h4>
                             </div>
-                        }
+                            <div className="form-group">
+                                <DatePicker className="search-filter"
+                                selected={EndDate} 
+                                ref={el => onDatepickerRef(el)}
+                                onChange={(date) => setEndDate(date)}
+                                dateFormat = "yyyy-MM-dd"
+                                maxDate={new Date()}
+                                placeholderText="End Date" />
+                            </div>
+                            {
+                                EndDate !== '' &&
+                                <div className="form-group">
+                                    <button 
+                                    onClick={() => setEndDate('')}
+                                    className="clear-btn">
+                                        X
+                                    </button>
+                                </div>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

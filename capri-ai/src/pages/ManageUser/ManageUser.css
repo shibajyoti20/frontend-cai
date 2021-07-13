@@ -6,6 +6,7 @@
 }
 .manage-user-left-wrapper{
     width: 100%;
+    margin: auto;
     margin-top: 30px;
     margin-bottom: 0;
     border-bottom: 1px solid #c0bdbd;
@@ -22,12 +23,12 @@
     font-family: var(--font-primary);
 }
 .agentid-form{
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     margin: 0px auto;
 }
 .agentid-form-group{
@@ -62,15 +63,22 @@
     padding: 0px 30px;
     border-radius: 0rem 50rem 50rem 0rem;
 }
-/* .filter-header-wrapper{
-    width: 65%;
+.filter-wrapper{
+    width: 62%;
+    margin: auto;
+}
+.filter-header-wrapper{
+    width: 96%;
     margin: auto;
     text-align: left;
-} */
+}
+.filter-header{
+    font-size: 20px;
+    margin-bottom: 12px;
+}
 .search-filters-form{
-    width: 70%;
+    width: 100%;
     margin: auto;
-    padding: 0px 20px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -113,7 +121,7 @@
 .search-filter{
     width: 110px;
     padding: 8px 10px;
-    border: 1px solid #c0bdbd;
+    border: 1px solid #b3b3b3;
     border-radius: 50rem;
     cursor: pointer;
     caret-color: transparent
@@ -167,7 +175,7 @@
     width: 100%;
     height: 75vh;
     padding-top: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 200px;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
@@ -180,9 +188,68 @@
     justify-content: center;
     align-items: center;
 }
+@media screen and (max-width: 1024px){
+    .agentid-form{
+        width: 80%;
+        margin-top: 30px;
+    }
+    .filter-wrapper{
+        width: 75%;
+    }
+    .search-filter::placeholder{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 768px){
+    .agentid-form{
+        width: 100%;
+        margin-top: 30px;
+    }
+    .agentid-formfield{
+        padding: 35px 0px 35px 48px;
+    }
+    .agentid-btn{
+        height: 72px;
+        padding: 0px 30px 0px 15px;
+    }
+    .filter-wrapper{
+        width: 90%;
+    }
+    .filter-header-wrapper{
+        width: 96%;
+    }
+    .filter-header{
+        font-size: 25px;
+    }
+    .search-filters-form{
+        width: 100%;
+    }
+    .search-filter{
+        width: 120px;
+    }
+    .search-filter::placeholder{
+        font-size: 18px;
+    }
+    .form-control{
+        font-size: 20px;
+    }
+}
 @media screen and (max-width: 440px){
+    .agentid-form{
+        display: block;
+    }
+    .agentid-glyph{
+        left: -42%;
+        top: calc(25px*1.65);
+    }
     .agentid-form-group{
         width: 100%;
+    }
+    .agentid-formfield{
+        padding: 25px 0px 25px 48px;
+    }
+    .agentid-formfield::placeholder{
+        font-size: 18px;
     }
     .agentid-btn{
         display: none;
