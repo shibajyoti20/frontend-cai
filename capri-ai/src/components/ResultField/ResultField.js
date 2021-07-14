@@ -1,7 +1,7 @@
 import React from 'react';
-import './LinkedAccountField.css';
+import './ResultField.css';
 
-function LinkedAccountField({FieldLabel, FieldContent}){
+function ResultField({FieldLabel, FieldContent}){
     return(
         <div className="field-wrapper">
             <div className="field-label">
@@ -14,4 +14,4 @@ function LinkedAccountField({FieldLabel, FieldContent}){
     );
 }
 
-export default LinkedAccountField;
+export default ResultField;

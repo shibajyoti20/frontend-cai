@@ -1,39 +1,53 @@
 import React from 'react';
 import './LinkedAccountItem.css';
 
-import LinkedAccountField from '../LinkedAccountField/LinkedAccountField';
+import ResultField from '../ResultField/ResultField';
 
 function LinkedAccountItem({accountData}){
     return(
         <div className="linked-account-wrapper">
 
-            {/* LocationID */}
-            <LinkedAccountField FieldLabel={"Location ID: "} 
-            FieldContent={accountData.locationID}/>
-
-            {/* CalendarID */}
-            <LinkedAccountField FieldLabel={"Calendar ID: "} 
-            FieldContent={accountData.calendarID}/>
-        
-            {/* Apikey */}
-            <LinkedAccountField FieldLabel={"ApiKey: "} 
-            FieldContent={accountData.apiKey}/>
-
-            {/* ProjectID */}
-            <LinkedAccountField FieldLabel={"Project ID: "} 
-            FieldContent={accountData.projectID}/>
-
-            {/* ServacEmail */}
-            <LinkedAccountField FieldLabel={"Servac Email: "} 
-            FieldContent={accountData.servacEmail}/>
-
             {/* BusinessName */}
             {
                 accountData.businessName !== undefined &&
-                <LinkedAccountField FieldLabel={"Business Name: "} 
+                <ResultField FieldLabel={"Business Name: "} 
                 FieldContent={accountData.businessName}/>
             }
 
+            {/* LocationID */}
+            {
+                accountData.locationID !== undefined &&
+                <ResultField FieldLabel={"Location ID: "} 
+                FieldContent={accountData.locationID}/>
+            }
+
+            {/* CalendarID */}
+            {
+                accountData.calendarID !== undefined &&
+                <ResultField FieldLabel={"Calendar ID: "} 
+                FieldContent={accountData.calendarID}/>
+            }
+        
+            {/* Apikey */}
+            {
+                accountData.apiKey !== undefined &&
+                <ResultField FieldLabel={"ApiKey: "} 
+                FieldContent={accountData.apiKey}/>
+            }
+
+            {/* ProjectID */}
+            {
+                accountData.projectID !== undefined &&
+                <ResultField FieldLabel={"Project ID: "} 
+                FieldContent={accountData.projectID}/>
+            }
+
+            {/* ServacEmail */}
+            {
+                accountData.servacEmail !== undefined &&
+                <ResultField FieldLabel={"Servac Email: "} 
+                FieldContent={accountData.servacEmail}/>
+            }
 
         </div>
     );
