@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Button from '../components/button/Button';
-import './landing.css';
+import Button from '../../components/button/Button';
+import './Landing.css';
 
 function Landing()
 {
@@ -19,12 +19,13 @@ function Landing()
                     </Link>
                     
                     {/* Add User */}
-                    <div className="btn-wrapper">
-                        <button className="user-btn" 
-                        onClick={() => window.location.href ="https://marketplace.gohighlevel.com/oauth/chooselocation?response_type=code&redirect_uri=h[…]rsations/message.readonly%20conversations/message.write"}>
-                            Add User
-                        </button>
-                    </div>
+                    <Link to="/addnewaccount">
+
+                        <Button buttonText={"Add User"} 
+                        classname={"user-btn"} 
+                        type={"button"}/>
+
+                    </Link>
                   
                 </div>
             </div>

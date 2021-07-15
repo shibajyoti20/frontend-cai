@@ -9,9 +9,9 @@ function AgentsList({agentData}){
 
             {/* Agent ID */}
             {
-                agentData.Agent_ID !== undefined &&
+                agentData !== undefined &&
                 <ResultField FieldLabel={"Agent_ID: "} 
-                FieldContent={agentData.Agent_ID}/>
+                FieldContent={agentData}/>
             }
 
         </div>

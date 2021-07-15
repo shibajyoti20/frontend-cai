@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { urls } from '../../components/Request';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -45,7 +46,7 @@ function ManageUser(){
 
     function SetBaseUrlForAgentIDBasedSearch(){
 
-        let BaseUrl = `https://systems.capriai.us/listAllAccounts?agentID=${SearchText}`;
+        let BaseUrl = `${urls.listAccounts}?agentID=${SearchText}`;
     
         // Setting Start Date and End Date
         if(StartDate === '' && EndDate !== ''){
@@ -101,7 +102,7 @@ function ManageUser(){
         let isEmail = CheckSearchTextEqualsEmailType();
 
         if(isEmail && IsValidEmail){
-            BaseUrl = `https://systems.capriai.us/listAgents`;
+            BaseUrl = `${urls.listAccounts}?email=${SearchText}`;
         }else if(!isEmail){
             BaseUrl = SetBaseUrlForAgentIDBasedSearch();
         }else if(isEmail && !IsValidEmail){
@@ -113,9 +114,11 @@ function ManageUser(){
 
     const setResponseDataToSuitableState = (responseData, isEmail) => {
         if(isEmail){
-            setAgentList(responseData);
+            setAgentList(responseData.agentIDs);
+            setLinkedAccounts([]);
         }else{
-            setLinkedAccounts(responseData);
+            setLinkedAccounts(responseData.locations);
+            setAgentList('');
         }
     }
 
@@ -142,7 +145,7 @@ function ManageUser(){
             }
     
             const response = await axios.get(BaseUrl);
-
+            
             if(response.status === 200){
                 if(listElement !== null) {
                     listElement.innerText = "";
@@ -152,7 +155,6 @@ function ManageUser(){
                 throw new Error("404");
             }
         }catch(err){
-            console.error(err);
             setAgentList('');
             setLinkedAccounts('');
             if(listElement !== null) {

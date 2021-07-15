@@ -1,0 +1,78 @@
+.addnewaccount-form-wrapper{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.addnewaccount-form{
+    width: 35%;
+}
+.addnewaccount-form > .form-group > h2{
+    color: #494949;
+}
+.addnewaccount-form > .form-group > .form-control{
+    font-size: 18px;
+    color: #282828;
+    padding: 20px 0px 20px 20px;
+    border: 1px solid #868686;
+}
+input:-internal-autofill-selected {
+    color: #282828 !important;
+}
+.addnewaccount-form > .form-group > .form-control::placeholder{
+    color: #686868;
+}
+.addnewaccount-submit-btn{
+    font-size: 20px;
+    height: 50px;
+}
+.error-header > h1{
+    font-size: 7rem;
+    margin: 0px;
+}
+.error-content > h2{
+    font-size: 16rem;
+    margin: 0px;
+}
+.error-content > h3{
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1080px){
+    .addnewaccount-form{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 768px){
+    .addnewaccount-form{
+        width: 60%;
+        padding-bottom: 100px;
+    }
+    .error-header > h1{
+        font-size: 6rem;
+    }
+    .error-content > h2{
+        font-size: 12rem;
+    }
+    .error-content > h3{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 440px){
+    .addnewaccount-form{
+        width: 95%;
+    }
+    .error-header > h1{
+        font-size: 4rem;
+    }
+    .error-content > h2{
+        font-size: 10rem;
+    }
+    .error-content > h3{
+        font-size: 2rem;
+    }
+}
