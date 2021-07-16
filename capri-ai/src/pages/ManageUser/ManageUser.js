@@ -150,6 +150,7 @@ function ManageUser(){
                 if(listElement !== null) {
                     listElement.innerText = "";
                 }
+                console.log(response);
                 setResponseDataToSuitableState(response.data, isEmail);
             }else{
                 throw new Error("404");

@@ -49,6 +49,13 @@ function LinkedAccountItem({accountData}){
                 FieldContent={accountData.servacEmail}/>
             }
 
+            {/* Sessions */}
+            {
+                accountData.Sessions !== undefined &&
+                <ResultField FieldLabel={"Sessions: "} 
+                FieldContent={accountData.Sessions}/>
+            }
+
         </div>
     );
 }
