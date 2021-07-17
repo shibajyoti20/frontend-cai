@@ -12,7 +12,7 @@ function Landing()
                     {/* Manage Button */}
                     <Link to="/manage">
 
-                        <Button buttonText={"Manage User"} 
+                        <Button buttonText={"Manage Accounts"} 
                         classname={"user-btn"} 
                         type={"button"}/>
 
@@ -21,7 +21,7 @@ function Landing()
                     {/* Add User */}
                     <Link to="/addnewaccount">
 
-                        <Button buttonText={"Add User"} 
+                        <Button buttonText={"Add New Account"} 
                         classname={"user-btn"} 
                         type={"button"}/>
 
