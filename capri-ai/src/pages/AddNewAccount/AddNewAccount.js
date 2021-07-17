@@ -52,7 +52,6 @@ function AddNewAccount(){
             }
         }catch(err){
             setSubmissionStatus('failed');
-            console.error(err);
         }
     }
 
