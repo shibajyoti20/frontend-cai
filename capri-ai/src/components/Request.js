@@ -1,4 +1,4 @@
 export const urls = {
-    "listAccounts" : "https://dwy-master.ue.r.appspot.com/listAllAccounts",
-    "addAccount" : "https://dwy-master.ue.r.appspot.com/addNewAccount"
+    "listAccounts" : "https://systems.capriai.us/listAllAccounts",
+    "addAccount" : "https://systems.capriai.us/addNewAccount"
 };
