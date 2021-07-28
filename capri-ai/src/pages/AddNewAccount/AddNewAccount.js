@@ -61,6 +61,7 @@ function AddNewAccount(){
                 throw new Error('400');
             }
         }catch(err){
+            setActivityIndicatorStatus('none');
             setSubmissionStatus('failed');
         }
     }
