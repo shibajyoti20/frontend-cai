@@ -1,10 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import Spinner from 'react-activity/dist/Spinner';
 import { urls } from '../../components/Request';
 
+import 'react-activity/dist/Spinner.css';
 import './AddNewAccount.css';
 
-import Button from '../../components/button/Button';
+import CustomButton from '../../components/button/Button';
 
 function AddNewAccount(){
 
@@ -16,7 +18,8 @@ function AddNewAccount(){
     const[apiKey, setApikey] = React.useState('');
     const[dialogFlowAgentID, setDialogFlowAgentID] = React.useState('');
 
-    const[submissionStatus, setSubmissionStatus] = React.useState('')
+    const[submissionStatus, setSubmissionStatus] = React.useState('');
+    const[activityIndicatorStatus, setActivityIndicatorStatus] = React.useState('none');
 
     const ClearForm = () => {
         setBusinessName('');
@@ -27,11 +30,18 @@ function AddNewAccount(){
         setDialogFlowAgentID('');
     }
 
+    React.useEffect(() => {
+        setActivityIndicatorStatus('none');
+    }, [])
+
     const HandleAddNewAccountFormSubmission = async(e) => {
         e.preventDefault();
         if(submissionStatus === 'failed'){
             setSubmissionStatus('');
         }
+       
+        setActivityIndicatorStatus('progress');
+        
         let formData = {
             Location_ID : locationID,
             email : email,
@@ -43,7 +53,7 @@ function AddNewAccount(){
 
         try{
             let response = await axios.post(urls.addAccount,formData);
-
+            
             if(response.status === 200){
                 ClearForm();
                 window.location.href = response.data.redirect;
@@ -56,6 +66,12 @@ function AddNewAccount(){
     }
 
     return(
+        <React.Fragment>
+        {console.log(activityIndicatorStatus)}
+        <div className="form-overlay" 
+        style={{display : activityIndicatorStatus === 'none'? 'none' : 'flex'}}>
+            <Spinner size={30} color={"#1875ee"}/>
+        </div>
         <div className="addnewaccount-form-wrapper">
             {
                 submissionStatus === 'failed' ?
@@ -129,13 +145,14 @@ function AddNewAccount(){
                     </div>
 
                     <div className="form-group">
-                        <Button buttonText={"Submit"} 
+                        <CustomButton buttonText={"Submit"} 
                         classname={"form-control addnewaccount-submit-btn"} 
                         type={"submit"}/>
                     </div>
                 </form>
             }
         </div>
+        </React.Fragment>
     )
 }
 
