@@ -17,6 +17,8 @@ function AddNewAccount(){
     const[email, setEmail] = React.useState('');
     const[apiKey, setApikey] = React.useState('');
     const[dialogFlowAgentID, setDialogFlowAgentID] = React.useState('');
+    const[checkboxA, setCheckboxA] = React.useState(false);
+    const[checkboxB, setCheckboxB] = React.useState(false);
 
     const[submissionStatus, setSubmissionStatus] = React.useState('');
     const[activityIndicatorStatus, setActivityIndicatorStatus] = React.useState('none');
@@ -28,6 +30,8 @@ function AddNewAccount(){
         setEmail('');
         setApikey('');
         setDialogFlowAgentID('');
+        setCheckboxA(false)
+        setCheckboxB(false);
     }
 
     React.useEffect(() => {
@@ -48,9 +52,11 @@ function AddNewAccount(){
             apiKey : apiKey,
             Business_Name : businessName,
             dialogflow_agent_id : dialogFlowAgentID,
-            calendarID : calendarID
+            calendarID : calendarID,
+            trainable : checkboxA,
+            saveToken: checkboxB
         }
-
+        console.log(formData);
         try{
             let response = await axios.post(urls.addAccount,formData);
             
@@ -143,6 +149,21 @@ function AddNewAccount(){
                         value={dialogFlowAgentID}
                         onChange={(e) => setDialogFlowAgentID(e.target.value)}
                         placeholder="DialogFlow Agent ID"/>
+                    </div>
+                    <div className="form-group checkbox-wrapper">
+                        <input type="checkbox" 
+                        className="checkbox-box"
+                        value={checkboxA}
+                        onChange={(e) => setCheckboxA(e.target.checked)}
+                        /><span className="checkbox-text">track conversations for this account</span>
+                    </div>
+
+                    <div className="form-group checkbox-wrapper">
+                        <input type="checkbox" 
+                        className="checkbox-box"
+                        value={checkboxB}
+                        onChange={(e) => setCheckboxB(e.target.checked)}
+                        /><span className="checkbox-text">use the GHL conversations API (recommended)</span>
                     </div>
 
                     <div className="form-group">

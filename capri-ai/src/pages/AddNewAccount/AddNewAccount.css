@@ -50,6 +50,17 @@ input:-internal-autofill-selected {
     font-weight: 700;
     font-size: 3rem;
 }
+.checkbox-wrapper{
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.checkbox-text{
+    font-size: 16px;
+    margin-left: 10px;
+    font-style: oblique;
+    font-weight: 600;
+}
 
 /* Media Queries */
 @media screen and (max-width: 1080px){
