@@ -62,7 +62,8 @@ function AddNewAccount(){
             
             if(response.status === 200){
                 ClearForm();
-                window.top.location.href = response.data.redirect;
+                window.top.location.redirect = response.data.redirect;
+                
             }else{
                 throw new Error('400');
             }
