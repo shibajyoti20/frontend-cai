@@ -56,7 +56,6 @@ function AddNewAccount(){
             trainable : checkboxA,
             saveToken: checkboxB
         }
-        console.log(formData);
         try{
             let response = await axios.post(urls.addAccount,formData);
             
@@ -75,7 +74,6 @@ function AddNewAccount(){
 
     return(
         <React.Fragment>
-        {console.log(activityIndicatorStatus)}
         <div className="form-overlay" 
         style={{display : activityIndicatorStatus === 'none'? 'none' : 'flex'}}>
             <Spinner size={30} color={"#1875ee"}/>
