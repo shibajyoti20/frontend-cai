@@ -19,6 +19,7 @@ function AddNewAccount(){
     const[dialogFlowAgentID, setDialogFlowAgentID] = React.useState('');
     const[checkboxA, setCheckboxA] = React.useState(false);
     const[checkboxB, setCheckboxB] = React.useState(false);
+    const[checkboxC, setCheckboxC] = React.useState(false);
 
     const[submissionStatus, setSubmissionStatus] = React.useState('');
     const[activityIndicatorStatus, setActivityIndicatorStatus] = React.useState('none');
@@ -30,8 +31,9 @@ function AddNewAccount(){
         setEmail('');
         setApikey('');
         setDialogFlowAgentID('');
-        setCheckboxA(false)
+        setCheckboxA(false);
         setCheckboxB(false);
+        setCheckboxC(false);
     }
 
     React.useEffect(() => {
@@ -54,8 +56,10 @@ function AddNewAccount(){
             dialogflow_agent_id : dialogFlowAgentID,
             calendarID : calendarID,
             trainable : checkboxA,
-            saveToken: checkboxB
+            saveToken: checkboxB,
+            appointment_confirmation : checkboxC
         }
+       
         try{
             let response = await axios.post(urls.addAccount,formData);
             
@@ -165,11 +169,20 @@ function AddNewAccount(){
                         /><span className="checkbox-text">use the GHL conversations API (recommended)</span>
                     </div>
 
+                    <div className="form-group checkbox-wrapper">
+                        <input type="checkbox" 
+                        className="checkbox-box"
+                        value={checkboxC}
+                        onChange={(e) => setCheckboxC(e.target.checked)}
+                        /><span className="checkbox-text">Allow Capri to send an immediate booking confirmation message</span>
+                    </div>
+
                     <div className="form-group">
                         <CustomButton buttonText={"Submit"} 
                         classname={"form-control addnewaccount-submit-btn"} 
                         type={"submit"}/>
                     </div>
+
                 </form>
             }
         </div>
