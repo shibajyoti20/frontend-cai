@@ -62,10 +62,12 @@ function AddNewAccount(){
        
         try{
             let response = await axios.post(urls.addAccount,formData);
-            
+         
             if(response.status === 200){
+                
                 ClearForm();
-                window.top.location.redirect = response.data.redirect;
+                
+                window.top.location.href = response.data.redirect;
                 
             }else{
                 throw new Error('400');
