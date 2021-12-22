@@ -32,7 +32,7 @@ function Landing()
                 <div className="btn-inside">
 
                     {/* Manage Subscription */}
-                    <a href="https://connect.capriai.us/customerportal">
+                    <a href="https://connect.capriai.us/customerportal" target="_blank">
 
                         <Button buttonText={"Manage Subscriptions"} 
                         classname={"user-btn"} 
