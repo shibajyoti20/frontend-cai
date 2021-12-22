@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import Button from '../../components/button/Button';
 import './Landing.css';
+
+import Button from '../../components/button/Button';
+import { Link } from "react-router-dom";
+import React from 'react';
 
 function Landing()
 {
@@ -26,6 +27,18 @@ function Landing()
                         type={"button"}/>
 
                     </Link>
+                  
+                </div>
+                <div className="btn-inside">
+
+                    {/* Manage Subscription */}
+                    <a href="https://connect.capriai.us/customerportal">
+
+                        <Button buttonText={"Manage Subscriptions"} 
+                        classname={"user-btn"} 
+                        type={"button"}/>
+
+                    </a>
                   
                 </div>
             </div>
