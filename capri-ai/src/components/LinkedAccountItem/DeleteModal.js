@@ -1,10 +1,11 @@
-import React from 'react';
-import axios from 'axios';
 import './LinkedAccountItem.css';
-import {urls} from '../Request';
-import { Button, Modal, Form } from 'react-bootstrap';
-import Spinner from 'react-activity/dist/Spinner';
 
+import { Button, Form, Modal } from 'react-bootstrap';
+
+import React from 'react';
+import Spinner from 'react-activity/dist/Spinner';
+import axios from 'axios';
+import {urls} from '../Request';
 
 function DeleteModal(props) {
     const [projectID, setProjectID] = React.useState('');
@@ -29,7 +30,7 @@ function DeleteModal(props) {
     const onSubmitHandler = async() => {
         try{
             const body = {
-                locationId : props.locationID,
+                locationId : props.accountData.locationID,
                 password : projectID
             }
             
@@ -90,7 +91,7 @@ function DeleteModal(props) {
             {/* <h4>To </h4> */}
             <p>
               This action cannot be undone. This will permanently 
-              delete the details related to <b>location ID {props.locationID}</b>.
+              delete the details related to <b>location ID {props.accountData.locationID}</b>.
             </p>
             <p>
               Please type <b>project ID</b> to confirm.
