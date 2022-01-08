@@ -1,11 +1,11 @@
-import React from 'react';
-import '../LinkedAccountItem/LinkedAccountItem.css';
+import './AgentList.css';
 
+import React from 'react';
 import ResultField from '../ResultField/ResultField';
 
 function AgentsList({agentData}){
     return(
-        <div className="linked-account-wrapper">
+        <div className="agent-list-wrapper">
 
             {/* Agent ID */}
             {
